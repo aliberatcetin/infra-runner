@@ -20,7 +20,7 @@ docker run -d \
     -e GRAPH_MASTER_IP="$CONTAINER_IP" \
     --name hpc_infra_runner \
     -p 8080:8080 -p 8081:8081 -p 3000:3000 \
-    hpc_infra
+    beratcetin787878/task-graph-infra
 
 # Step 3: Copy the entrypoint.sh into the container
 docker cp entrypoint.sh hpc_infra_runner:/opt/entrypoint.sh
