@@ -1,1 +1,1 @@
-docker exec -it --env COLUMNS=`tput cols` --env LINES=`tput lines` ubuntu-container bash
+docker exec -it --env COLUMNS=`tput cols` --env LINES=`tput lines` hpc_infra_runner bash
