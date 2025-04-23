@@ -1,0 +1,1 @@
+docker exec -it --env COLUMNS=`tput cols` --env LINES=`tput lines` ubuntu-container bash
