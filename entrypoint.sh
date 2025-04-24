@@ -9,19 +9,20 @@ fi
 neo4j start
 sleep 10
 
-cd /opt/thesis-task-graph-interface
-# Start frontend using PM2
-pm2 start npm --name frontend -- start
-
-# Start backend
-nohup java -jar /opt/app.jar > /opt/app.log 2>&1 &
 
 cd /opt
 rm -rf mpi-api
 git clone https://github.com/aliberatcetin/mpi-api.git
 cd mpi-api/build
 make
-./api &
+nohup ./api > /opt/api.log 2>&1 &
+
+cd /opt/thesis-task-graph-interface
+# Start frontend using PM2
+pm2 start npm --name frontend -- start
+
+# Start backend
+nohup java -jar /opt/app.jar > /opt/app.log 2>&1 &
 
 # Keep container alive with PM2 logs
 pm2 logs

@@ -14,3 +14,5 @@ to delete a node, select a node and press backspace.
 
 
 ./run_infra.sh uses the docker repo https://hub.docker.com/repository/docker/beratcetin787878/task-graph-infra/general which contains all the necessary packages for backend/infra.
+
+better to avoid call purge_container.sh if it is not mandatory since database holds container-wise state. 
